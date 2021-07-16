@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+    <title>Ship Battle!</title>
+</head>
+
+<body>
+
+    <!-- Board Container -->
+    <div class="board">
+        <!-- Player Grid -->
+        <div class="grid player"></div>
+        <!-- Opponent Grid -->
+        <div class="grid opponent"></div>
+    </div>
+
+    <!-- Control Panel -->
+    <div class="panel">
+        <!-- Start Button -->
+        <button id="start">START</button>
+        <!-- Rotate Ship Button -->
+        <button id="rotate">ROTATE</button>
+        <!-- Player Turn Indicator -->
+        <h3 id="turn">Turn</h3>
+        <!-- Action Results -->
+        <h4 id="info">Result</h4>
+    </div>
+
+    <!-- Ships -->
+    <div class="display">
+
+        <!-- Destroyer -->
+        <div class="ship destroyer-hull" draggable="true">
+            <div id="destroyer-0"></div>
+            <div id="destroyer-1"></div>
+        </div>
+
+        <!-- Submarine -->
+        <div class="ship submarine-hull" draggable="true">
+            <div id="submarine-0"></div>
+            <div id="submarine-1"></div>
+            <div id="submarine-2"></div>
+        </div>
+
+        <!-- Cruiser -->
+        <div class="ship cruiser-hull" draggable="true">
+            <div id="cruiser-0"></div>
+            <div id="cruiser-1"></div>
+            <div id="cruiser-2"></div>
+        </div>
+
+        <!-- Battleship -->
+        <div class="ship battleship-hull" draggable="true">
+            <div id="battleship-0"></div>
+            <div id="battleship-1"></div>
+            <div id="battleship-2"></div>
+            <div id="battleship-3"></div>
+        </div>
+
+        <!-- Aircraft Carrier -->
+        <div class="ship carrier-hull" draggable="true">
+            <div id="carrier-0"></div>
+            <div id="carrier-1"></div>
+            <div id="carrier-2"></div>
+            <div id="carrier-3"></div>
+            <div id="carrier-4"></div>
+        </div>
+
+    </div>
+    
+</body>
+</html>

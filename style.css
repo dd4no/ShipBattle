@@ -1,0 +1,119 @@
+* {
+    padding: 0;
+    margin: 0;
+    /* box-sizing: border-box; */
+}
+
+.board {
+    display: flex;
+}
+.player {
+    padding: 10px;
+    margin: 20px;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    background: blue;
+}
+
+.grid div {
+    outline: -1px solid black;
+    /* border: 1px solid white; */
+    width: 40px;
+    height: 40px;
+    /* background: red; */
+}
+
+.opponent {
+    padding: 10px;
+    margin: 20px;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    background: lightblue;
+}
+
+.display {
+    padding: 10px;
+    margin: 20px;
+    width: 400px;
+    height: 400px;
+    background: orange;
+}
+
+.ship div {
+    width: 40px;
+    height: 40px;
+
+}
+
+.destroyer-hull {
+    border: 1px solid black;
+    border-radius: 10px 50% 50% 10px;
+    margin: 10px;
+    width: 80px;
+    height: 40px;
+    display: flex;
+    background: gray;
+}
+
+.submarine-hull {
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 50%;
+    margin: 10px;
+    width: 120px;
+    height: 40px;
+    display: flex;
+    background: yellow;
+}
+
+
+.cruiser-hull {
+    border: 1px solid black;
+    border-radius: 50%;
+    margin: 10px;
+    width: 120px;
+    height: 40px;
+    display: flex;
+    background: gray;
+}
+#cruiser-1 {
+    outline: 2px solid black;
+    outline-offset: -10px;
+}
+
+.battleship-hull {
+    border: 1px solid black;
+    border-radius: 50%;
+    margin: 10px;
+    width: 160px;
+    height: 40px;
+    display: flex;
+    background: gray;
+}
+#battleship-1, #battleship-2{
+    outline: 2px solid black;
+    outline-offset: -10px;
+}
+
+.carrier-hull {
+    border: 1px solid black;
+    border-radius: 10%;
+    margin: 10px;
+    width: 200px;
+    height: 40px;
+    display: flex;
+    background: gray;
+}
+#carrier-1 {
+    outline: 2px solid black;
+    outline-offset: -10px;
+}
+
+.destroyer, .submarine, .cruiser, .battleship, .carrier {
+    background: gray;
+}
+
