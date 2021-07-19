@@ -1,23 +1,32 @@
+//  Ship Battle!
 
+// Main Program
+
+// Load document and set up global variables for game objects
 document.addEventListener('DOMContentLoaded', () => {
 
+    // Battle grids
     const playerGrid = document.querySelector('.player');
     const opponentGrid = document.querySelector('.opponent');
     const displayGrid = document.querySelector('.display');
+    // Ships
     const ships = document.querySelectorAll('.ship');
     const destroyer = document.querySelector('.destroyer-hull');
     const submarine = document.querySelector('.submarine-hull');
     const cruiser = document.querySelector('.cruiser-hull');
     const battleship = document.querySelector('.battleship-hull');
     const carrier = document.querySelector('.carrier-hull');
+    // Interface
     const startButton = document.querySelector('#start');
     const rotateButton = document.querySelector('#rotate');
+    let ifHorizontal = true;
     const turnDisplay = document.querySelector('#turn');
     const infoDisplay = document.querySelector('#info');
+    // Squares played
     const playerSquares = [];
     const opponentSquares = [];
+    // 
     const width = 10;
-    let ifHorizontal = true;
 
     // Create Board
     function createBoard(grid, squares) {
@@ -31,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     createBoard(playerGrid, playerSquares);
     createBoard(opponentGrid, opponentSquares);
 
-    // Ships
+    // Ship Objects
     const fleet = [
         {
             name: 'destroyer',
@@ -75,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function deploy(ship) {
         // Generate random ship orientation.
         let randomDirection = Math.floor(Math.random() * ship.directions.length);
-        console.log("random direction: " + randomDirection);
+        console.log(`random direction ${ship.name}: `  + randomDirection);
 
         // Store current orientation array
         let current = ship.directions[randomDirection];
