@@ -4,7 +4,6 @@
 
 // Load document and set up global variables for game objects
 document.addEventListener('DOMContentLoaded', () => {
-
     // Battle grids
     const playerGrid = document.querySelector('.player');
     const opponentGrid = document.querySelector('.opponent');
@@ -16,29 +15,35 @@ document.addEventListener('DOMContentLoaded', () => {
     const cruiser = document.querySelector('.cruiser-hull');
     const battleship = document.querySelector('.battleship-hull');
     const carrier = document.querySelector('.carrier-hull');
-    // Interface
+    // Interface items
     const startButton = document.querySelector('#start');
     const rotateButton = document.querySelector('#rotate');
     let ifHorizontal = true;
     const turnDisplay = document.querySelector('#turn');
     const infoDisplay = document.querySelector('#info');
-    // Squares played
+    // Grid square arrays
     const playerSquares = [];
     const opponentSquares = [];
-    // 
-    const width = 10;
 
     // Create Board
-    function createBoard(grid, squares) {
-        for(let i=0; i<width*width; i++){
+    // Make a grid
+    function makeGrid(grid, squares) {
+        // 10 x 10 grid with 100 total squares
+        for(let i=0; i<100; i++){
+            // Create a square
             const square = document.createElement('div');
+            // Assign square an ID number
             square.dataset.id = i;
+            // Add square to the grid container
             grid.appendChild(square);
+            // Add to array of squares
             squares.push(square);
         }
     }
-    createBoard(playerGrid, playerSquares);
-    createBoard(opponentGrid, opponentSquares);
+    // Create player grid
+    makeGrid(playerGrid, playerSquares);
+    // Create opponent grid
+    makeGrid(opponentGrid, opponentSquares);
 
     // Ship Objects
     const fleet = [
@@ -46,35 +51,35 @@ document.addEventListener('DOMContentLoaded', () => {
             name: 'destroyer',
             directions: [
                 [0,1],
-                [0,width]
+                [0,10]
             ]
         },
         {
             name: 'submarine',
             directions: [
                 [0,1,2],
-                [0,width,width*2]
+                [0,10,20]
             ]
         },
         {
             name: 'cruiser',
             directions: [
                 [0,1,2],
-                [0,width,width*2]
+                [0,10,20]
             ]
         },
         {
             name: 'battleship',
             directions: [
                 [0,1,2,3],
-                [0,width,width*2,width*3]
+                [0,10,20,30]
             ]
         },
         {
             name: 'carrier',
             directions: [
                 [0,1,2,3,4],
-                [0,width,width*2,width*3,width*4]
+                [0,10,20,30,40]
             ]
         }
     ]
@@ -106,10 +111,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const isOccupied = current.some(index => opponentSquares[randomStart + index].classList.contains('occupied'));
         console.log(isOccupied);
 
-        const isRightEdge = current.some(index => (randomStart + index) % width === width - 1)
+        const isRightEdge = current.some(index => (randomStart + index) % 10 === 10 - 1)
         console.log(isRightEdge);
 
-        const isLeftEdge = current.some(index => (randomStart + index) % width === 0)
+        const isLeftEdge = current.some(index => (randomStart + index) % 10 === 0)
         console.log(isLeftEdge);
         
         if (!isOccupied && !isRightEdge && !isLeftEdge){
