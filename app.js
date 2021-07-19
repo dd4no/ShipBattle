@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Deploy Random Opponent Fleet
     function deploy(ship) {
         // Generate random ship orientation.
-        let randomDirection = Math.floor(Math.random() * ship.directions.length);
+        let randomDirection = Math.floor(Math.random() * 2);
         console.log(`random direction ${ship.name}: `  + randomDirection);
 
         // Store current orientation array
@@ -96,15 +96,11 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log("current orientation: " + current);
 
         // Determine generated orientation and assign direction variable.
-        if (randomDirection === 0) {
-            direction = 1;
-        }
-        if (randomDirection === 1) {
-            direction = 10;
-        }
+        if (randomDirection === 0) direction = 1;
+        if (randomDirection === 1) direction = 10;
         console.log("direction: " + direction);
 
-        // Generate a random starting point considering every ship's length
+        // Generate a random starting point
         let randomStart = Math.abs(Math.floor(Math.random() * 100 - (ship.directions[0].length * direction)));
         console.log("random start position: " + randomStart);
 
@@ -129,12 +125,12 @@ document.addEventListener('DOMContentLoaded', () => {
     deploy(fleet[3])
     deploy(fleet[4])   
 
-    function rotate(ship) {
-        if (isHorizontal) {
-            ship.classList.add('vertical');
-            isHorizontal = false;
-        }
-    }
+    // function rotate(ship) {
+    //     if (isHorizontal) {
+    //         ship.classList.add('vertical');
+    //         isHorizontal = false;
+    //     }
+    // }
 
 })
 

@@ -121,5 +121,6 @@
 
 .destroyer, .submarine, .cruiser, .battleship, .carrier {
     background: gray;
+    /* border: 1px solid black; */
 }
 
