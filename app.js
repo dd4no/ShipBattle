@@ -43,19 +43,19 @@ document.addEventListener('DOMContentLoaded', () => {
     function addEdges(squares) {
         // Top
         for(let t=0; t<10; t++) {
-            squares[t].classList.add('top')
+            squares[t].classList.add('edge')
         };
         // Right
-        for(let r=9; r<100; r+=10) {
-            squares[r].classList.add('right')
+        for(let r=19; r<100; r+=10) {
+            squares[r].classList.add('edge')
         };
         // Bottom
         for(let b=90; b<100; b++) {
-            squares[b].classList.add('bottom')
+            squares[b].classList.add('edge')
         };
         // Left
         for(let l=0; l<=90; l+=10) {
-            squares[l].classList.add('left')
+            squares[l].classList.add('edge')
         };
     }
     
@@ -82,8 +82,8 @@ document.addEventListener('DOMContentLoaded', () => {
             name: 'submarine',
             size: 3,
             directions: [
-                [-2,-1,0,1,2],
-                [-20,-10,0,10,20]
+                [0,1,2],
+                [0,10,20],
             ]
         },
         {
@@ -141,6 +141,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
             console.log("direction Increment: " + directionIncrement);
             console.log("current orientation: " + orientationArray);
+
+            // function checkFit(start, orientation, length) {
+            //     switch (orientation) {
+            //         case 1:
+            //             { if start.classList.contains('edge')}
+            //             break;
+                
+            //         default:
+            //             {}
+            //             break;
+            //     }
+            // }
 
                 
             // const isOccupied = orientationArray.some(index => opponentSquares[randomStart + index].classList.contains('occupied'));
