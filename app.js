@@ -43,19 +43,19 @@ document.addEventListener('DOMContentLoaded', () => {
     function addEdges(squares) {
         // Top
         for(let t=0; t<10; t++) {
-            squares[t].classList.add('edge')
+            squares[t].classList.add('top')
         };
         // Right
         for(let r=19; r<100; r+=10) {
-            squares[r].classList.add('edge')
+            squares[r].classList.add('right')
         };
         // Bottom
         for(let b=90; b<100; b++) {
-            squares[b].classList.add('edge')
+            squares[b].classList.add('bottom')
         };
         // Left
         for(let l=0; l<=90; l+=10) {
-            squares[l].classList.add('edge')
+            squares[l].classList.add('left')
         };
     }
     
