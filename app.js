@@ -5,24 +5,24 @@
 // Load document and set up global variables for game objects
 document.addEventListener('DOMContentLoaded', () => {
     // Battle grids
-    const playerGrid = document.querySelector('.player');
-    const opponentGrid = document.querySelector('.opponent');
-    const displayGrid = document.querySelector('.display');
+    const playerGrid = document.querySelector('#player');
+    const opponentGrid = document.querySelector('#opponent');
+    // Grid arrays
+    const playerSquares = [];
+    const opponentSquares = [];
+    // Interface items
+    const startButton = document.querySelector('#start');
+    const rotateButton = document.querySelector('#rotate');
+    const turnDisplay = document.querySelector('#turn');
+    const infoDisplay = document.querySelector('#info');
     // Ships
+    const shipyard = document.querySelector('#shipyard');
     const ships = document.querySelectorAll('.ship');
     const destroyer = document.querySelector('.destroyer-hull');
     const submarine = document.querySelector('.submarine-hull');
     const cruiser = document.querySelector('.cruiser-hull');
     const battleship = document.querySelector('.battleship-hull');
     const carrier = document.querySelector('.carrier-hull');
-    // Interface items
-    const startButton = document.querySelector('#start');
-    const rotateButton = document.querySelector('#rotate');
-    const turnDisplay = document.querySelector('#turn');
-    const infoDisplay = document.querySelector('#info');
-    // Grid square arrays
-    const playerSquares = [];
-    const opponentSquares = [];
     
     // Create Board    
     // Make a grid
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
             size: 3,
             directions: [
                 [0,1,2],
-                [0,10,20],
+                [0,10,20]
             ]
         },
         {

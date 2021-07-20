@@ -13,26 +13,25 @@
 
     <!-- Board Container -->
     <div class="board">
-        <!-- Player Grid -->
-        <div class="grid player"></div>
         <!-- Opponent Grid -->
-        <div class="grid opponent"></div>
+        <div id="opponent" class="grid"></div>        
+        <!-- Player Grid -->
+        <div id="player" class="grid"></div>
     </div>
-
-    <!-- Control Panel -->
-    <div class="panel">
-        <!-- Start Button -->
-        <button id="start">START</button>
-        <!-- Rotate Ship Button -->
-        <button id="rotate">ROTATE</button>
-        <!-- Player Turn Indicator -->
-        <h3 id="turn">Turn</h3>
-        <!-- Action Results -->
-        <h4 id="info">Result</h4>
-    </div>
-
+        <!-- Control Panel -->
+        <div class="panel">
+            <!-- Start Button -->
+            <button id="start">START</button>
+            <!-- Rotate Ship Button -->
+            <button id="rotate">ROTATE</button>
+            <!-- Player Turn Indicator -->
+            <h3 id="turn">Turn</h3>
+            <!-- Action Results -->
+            <h4 id="info">Result</h4>
+        </div>
+        
     <!-- Ships -->
-    <div class="display">
+    <div id="shipyard">
 
         <!-- Destroyer -->
         <div class="ship destroyer-hull" draggable="true">
