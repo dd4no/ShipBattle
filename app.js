@@ -84,46 +84,65 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     ]
     // console.log(fleet);
-
+    
     // Deploy Random Opponent Fleet
     function deploy(ship) {
-        // Generate random ship orientation.
-        let randomDirection = Math.floor(Math.random() * 2);
-        console.log(`random direction ${ship.name}: `  + randomDirection);
-
-        // Store current orientation array
-        let current = ship.directions[randomDirection];
-        console.log("current orientation: " + current);
-
-        // Determine generated orientation and assign direction variable.
-        if (randomDirection === 0) direction = 1;
-        if (randomDirection === 1) direction = 10;
-        console.log("direction: " + direction);
+        console.log(ship.name);
 
         // Generate a random starting point
-        let randomStart = Math.abs(Math.floor(Math.random() * 100 - (ship.directions[0].length * direction)));
-        console.log("random start position: " + randomStart);
-
-        const isOccupied = current.some(index => opponentSquares[randomStart + index].classList.contains('occupied'));
-        console.log(isOccupied);
-
-        const isRightEdge = current.some(index => (randomStart + index) % 10 === 10 - 1)
-        console.log(isRightEdge);
-
-        const isLeftEdge = current.some(index => (randomStart + index) % 10 === 0)
-        console.log(isLeftEdge);
+        let randomStart = Math.floor(Math.random() * 100);
+        console.log(`random start position: `  + randomStart);
         
-        if (!isOccupied && !isRightEdge && !isLeftEdge){
-            current.forEach(index => opponentSquares[randomStart + index].classList.add('occupied', ship.name))
+        // Generate random ship orientation.
+        let randomDirection = Math.floor(Math.random() * 2);
+        // console.log(`random direction: `  + randomDirection);
+
+        let directionIncrement;
+        switch (randomDirection) {
+            case 1:
+                // 1 = Vertical alignment. Increment direction by 10 squares
+                directionIncrement = 10;
+                break;
+                
+            default:
+                // 0 = Horizontal alignment. Increment direction by 1 square
+                directionIncrement = 1;
+                break;
         }
-        else deploy(ship)
+        console.log("direction Increment: " + directionIncrement);
+
+        // Store current orientation array
+        // let current = ship.directions[randomDirection];
+        // console.log("current orientation: " + current);
+        
+
+        
+
+
+
+        // if (randomStart + ship.directions[0].length)
+        
+
+        // const isOccupied = current.some(index => opponentSquares[randomStart + index].classList.contains('occupied'));
+        // console.log(isOccupied);
+
+        // const isRightEdge = current.some(index => (randomStart + index) % 10 === 10 - 1)
+        // console.log(isRightEdge);
+
+        // const isLeftEdge = current.some(index => (randomStart + index) % 10 === 0)
+        // console.log(isLeftEdge);
+        
+        // if (!isOccupied && !isRightEdge && !isLeftEdge){
+        //     current.forEach(index => opponentSquares[randomStart + index].classList.add('occupied', ship.name))
+        // }
+        // else deploy(ship)
     }
 
     deploy(fleet[0])
-    deploy(fleet[1])
-    deploy(fleet[2])
-    deploy(fleet[3])
-    deploy(fleet[4])   
+    // deploy(fleet[1])
+    // deploy(fleet[2])
+    // deploy(fleet[3])
+    // deploy(fleet[4])   
 
     // function rotate(ship) {
     //     if (isHorizontal) {
