@@ -29,20 +29,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // Make a grid
     function makeGrid(grid, squares) {
         // 10 x 10 grid with 100 total squares
-        const rowNames = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"];
-        rowNames.forEach(element => {
-            for(let i=1; i<=10; i++){
-                // Create a square
-                const square = document.createElement('div');
-                // Assign square an ID number
-                square.dataset.id = element + i;
-                // Add square to the grid container
-                grid.appendChild(square);
-                // Add to array of squares
-                squares.push(square);
-            }
-            
-        });
+        for(let i=0; i<100; i++){
+            // Create a square
+            const square = document.createElement('div');
+            // Assign square an ID number
+            square.dataset.id = i;
+            // Add square to the grid container
+            grid.appendChild(square);
+            // Add to array of squares
+            squares.push(square);
+        }
     }
     // Create player grid
     makeGrid(playerGrid, playerSquares);
