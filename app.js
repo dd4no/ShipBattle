@@ -1,9 +1,12 @@
 //  Ship Battle!
 
-// Main Program
+
+// *** Main Program ***
 
 // Load document and set up global variables for game objects
+
 document.addEventListener('DOMContentLoaded', () => {
+
     // Battle grids
     const playerGrid = document.querySelector('#player');
     const opponentGrid = document.querySelector('#opponent');
@@ -23,51 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const cruiser = document.querySelector('.cruiser-hull');
     const battleship = document.querySelector('.battleship-hull');
     const carrier = document.querySelector('.carrier-hull');
-    
-    // Create Board    
-    // Make a grid
-    function makeGrid(grid, squares) {
-        // Create 100 total squares
-        for(let i=1; i<=100; i++){
-            // Create a square
-            const square = document.createElement('div');
-            // Assign square an ID number
-            square.dataset.id = i;
-            // Add square to the grid container
-            grid.appendChild(square);
-            // Add to array of squares
-            squares.push(square);
-        }
-    }
-    // Define edges
-    function addEdges(squares) {
-        // Top
-        for(let t=0; t<10; t++) {
-            squares[t].classList.add('top')
-        };
-        // Right
-        for(let r=9; r<100; r+=10) {
-            squares[r].classList.add('right')
-        };
-        // Bottom
-        for(let b=90; b<100; b++) {
-            squares[b].classList.add('bottom')
-        };
-        // Left
-        for(let l=0; l<=90; l+=10) {
-            squares[l].classList.add('left')
-        };
-    }
-    
-    // Create player grid
-    makeGrid(playerGrid, playerSquares);
-    addEdges(playerSquares);
-
-    // Create opponent grid
-    makeGrid(opponentGrid, opponentSquares);
-    addEdges(opponentSquares)
-    
-    
     // Ship Objects
     const fleet = [
         {
@@ -84,7 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
             directions: [
                 [0,1,2],
                 [0,10,20]
-            ]
+            ],
+            possibleCoords: []
         },
         {
             name: 'cruiser',
@@ -112,9 +71,55 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     ]
     
-    // Deploy Random Opponent Fleet
+    // Create Board
+
+    // Make a grid
+    function makeGrid(grid, squares) {
+        // Create 100 total squares
+        for(let i=1; i<=100; i++){
+            // Create a square
+            const square = document.createElement('div');
+            // Assign square an ID number
+            square.dataset.id = i;
+            // Add square to the grid container
+            grid.appendChild(square);
+            // Add to array of squares
+            squares.push(square);
+        }
+    }
+
+    // Define edges
+    function addEdges(squares) {
+        // Top
+        for(let t=0; t<10; t++) {
+            squares[t].classList.add('top')
+        };
+        // Right
+        for(let r=9; r<100; r+=10) {
+            squares[r].classList.add('right')
+        };
+        // Bottom
+        for(let b=90; b<100; b++) {
+            squares[b].classList.add('bottom')
+        };
+        // Left
+        for(let l=0; l<=90; l+=10) {
+            squares[l].classList.add('left')
+        };
+    } 
+
+    // Create player grid
+    makeGrid(playerGrid, playerSquares);
+    addEdges(playerSquares);
+
+    // Create opponent grid
+    makeGrid(opponentGrid, opponentSquares);
+    addEdges(opponentSquares)    
+    
+    // Deploy opponent fleet
     function deploy(ship) {
-        console.log(ship.name);
+        console.log(ship.name, ship.size);
+
         
         // Generate a random starting point
         let randomStart = Math.ceil(Math.random() * 100);
@@ -142,18 +147,6 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log("direction Increment: " + directionIncrement);
             console.log("current orientation: " + orientationArray);
 
-            // function checkFit(start, orientation, length) {
-            //     switch (orientation) {
-            //         case 1:
-            //             { if start.classList.contains('edge')}
-            //             break;
-                
-            //         default:
-            //             {}
-            //             break;
-            //     }
-            // }
-
                 
             // const isOccupied = orientationArray.some(index => opponentSquares[randomStart + index].classList.contains('occupied'));
             // console.log(isOccupied);
@@ -168,24 +161,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 //     current.forEach(index => opponentSquares[randomStart + index].classList.add('occupied', ship.name))
                 // }
                 // else deploy(ship)
-            }
+    }
             
-            // deploy(fleet[0])
-            deploy(fleet[1])
-            // deploy(fleet[2])
-            // deploy(fleet[3])
-            // deploy(fleet[4])
-           
-            
-
-
-            // let ifHorizontal = true;
-            // function rotate(ship) {
-                //     if (isHorizontal) {
-                    //         ship.classList.add('vertical');
-                    //         isHorizontal = false;
-                    //     }
-                    // }
+    // deploy(fleet[0])
+    deploy(fleet[1])
+    // deploy(fleet[2])
+    // deploy(fleet[3])
+    // deploy(fleet[4])
                     
 })
                     
