@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
             squares[t].classList.add('top')
         };
         // Right
-        for(let r=19; r<100; r+=10) {
+        for(let r=9; r<100; r+=10) {
             squares[r].classList.add('right')
         };
         // Bottom

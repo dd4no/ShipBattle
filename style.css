@@ -21,6 +21,13 @@ body {
     height: 400px;
 }
 
+.grid > div {
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255,0.2);
+    width: 40px;
+    height: 40px;
+}
+
 #player {
     border: 2px solid black;
     background: blue;
@@ -28,7 +35,7 @@ body {
 
 #opponent {
     border: 2px solid black;
-    background: lightblue;
+    background: rgb(104, 202, 235);
 }
 
 #shipyard {
@@ -37,48 +44,31 @@ body {
     width: 300px;
     height: 300px;
     background: rgb(70, 50, 13);
-
-}
-.grid div {
-    outline: -1px solid black;
-    /* border: 1px solid white; */
-    width: 40px;
-    height: 40px;
-    /* background: red; */
 }
 
-
-
-.ship div {
-    width: 40px;
-    height: 40px;
-
-}
-
-.destroyer-hull {
-    border: 1px solid black;
-    border-radius: 10px 50% 50% 10px;
-    margin: 10px;
-    width: 80px;
-    height: 40px;
+.ship {
     display: flex;
+    border: 1px solid black;
+    margin: 10px;
     background: gray;
 }
 
-.destroyer-hull-vert {
+.ship div {
     width: 40px;
-    height: 80px;
-    flex-wrap: wrap;
+    height: 40px;    
+}
+
+.destroyer-hull {
+    border-radius: 30% 50% 50% 30%;
+    width: 80px;
+    height: 40px;
 }
 
 .submarine-hull {
-    padding: 5px;
-    border: 1px solid black;
+    padding: 3px;
     border-radius: 50%;
-    margin: 10px;
     width: 120px;
     height: 40px;
-    display: flex;
     background: yellow;
 }
 #submarine-1 {
@@ -86,15 +76,10 @@ body {
     border-radius: 50%;
 }
 
-
 .cruiser-hull {
-    border: 1px solid black;
     border-radius: 50%;
-    margin: 10px;
     width: 120px;
     height: 40px;
-    display: flex;
-    background: gray;
 }
 #cruiser-1 {
     outline: 1px solid black;
@@ -102,13 +87,9 @@ body {
 }
 
 .battleship-hull {
-    border: 1px solid black;
     border-radius: 50%;
-    margin: 10px;
     width: 160px;
     height: 40px;
-    display: flex;
-    background: gray;
 }
 #battleship-1, #battleship-2{
     outline: 1px solid black;
@@ -116,13 +97,9 @@ body {
 }
 
 .carrier-hull {
-    border: 1px solid black;
-    border-radius: 10%;
-    margin: 10px;
+    border-radius: 10% 20% 20% 10%;
     width: 200px;
     height: 40px;
-    display: flex;
-    background: gray;
 }
 #carrier-1 {
     outline: 1px solid black;
@@ -131,6 +108,6 @@ body {
 
 .destroyer, .submarine, .cruiser, .battleship, .carrier {
     background: gray;
-    /* border: 1px solid black; */
+    border: 1px solid black;
 }
 
