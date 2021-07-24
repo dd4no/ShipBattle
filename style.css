@@ -75,6 +75,10 @@
     display: flex;
     background: yellow;
 }
+#submarine-1 {
+    border: 1px solid black;
+    border-radius: 50%;
+}
 
 
 .cruiser-hull {
